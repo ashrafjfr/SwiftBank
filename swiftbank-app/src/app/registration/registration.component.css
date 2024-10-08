@@ -1,0 +1,142 @@
+/* Container for the entire registration screen */
+.registration-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 0 100px;
+    position: relative;
+  }
+  
+  /* Logo styling */
+  .logo img {
+    width: 150px;
+    margin-bottom: 20px;
+    position: absolute;
+    top: 50px;
+    left: 80px;
+  }
+  
+  /* Heading text styling */
+  h2 {
+    font-size: 32px;
+    font-weight: bolder;
+    margin-bottom: 40px;
+    background: linear-gradient(to right, #C42124 10%, #2175C4 50%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    text-align: left;
+    align-self: flex-start; /* Aligns the heading to the start of the container */
+    margin-left: 15%;
+  }
+
+  #head-title{
+    justify-content: left;
+  }
+  
+  /* Form container to hold all input fields */
+.registration-form {
+    width: 70%; /* Adjust width based on desired form size */
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 5px;
+    column-gap: 20px;
+  }
+  
+  /* Form group for each row of inputs */
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    width: 48%; /* Two input fields side by side with spacing */
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    margin-bottom: 5px;
+    text-align: left; /* Ensures label is aligned left */
+  }
+  
+  .form-group input {
+    padding: 15px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    width: 500px;
+    border-radius: 15px;
+    border-color: #ebebeb;
+  }
+  
+  .form-group input:focus {
+    border-color: #2175C4;
+  }
+  
+  .form-group input::placeholder {
+    color: #bebebe;
+    font-size: 14px;
+  }
+  
+
+  /* Button container to align Register and Back buttons on the same line */
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+  }
+  
+  .register-btn {
+    padding: 15px 30px;
+    font-size: 15px;
+    color: #F5F5F5;
+    background-color: #2E5A84;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    width: 220px;
+    border-radius: 8px;
+    font-weight: bold;
+
+  }
+  
+  .register-btn:hover {
+    background-color: #274d71;
+  }
+  
+  .back-btn {
+    display: inline-block;
+    color: #A9A9A9;
+    font-size: 14px;
+    text-decoration: none;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 15px 30px;
+    font-weight: 300;
+  }
+  
+  .back-btn:hover {
+    font-weight: bold;
+  }
+  
+  /* Adjustments for mobile view */
+  @media (max-width: 768px) {
+    .registration-form {
+      width: 90%; /* Make form take up more space on smaller screens */
+    }
+  
+    .form-group {
+      flex-direction: column; /* Stack inputs vertically on small screens */
+    }
+  
+    .form-group input {
+      width: 100%; /* Full-width input fields on smaller screens */
+      margin-bottom: 10px;
+    }
+  }
