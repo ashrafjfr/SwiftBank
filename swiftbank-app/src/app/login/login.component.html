@@ -7,21 +7,26 @@
         <img src="assets/illustration.png" alt="Illustration" />
       </div>
     </div>
+  
     <div class="login-right">
       <h2>on your way to Swift-er transactions...</h2>
-      <form class="login-form">
+  
+      <!-- Bind the form to the loginForm and add (ngSubmit) to handle form submission -->
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
         <div class="form-group">
-            <label for="username">User Name</label><br><br>
-            <input type="text" id="input_id" placeholder="Enter User Name" />
+          <label for="username">User Name</label><br><br>
+          <!-- Bind the input field to the 'username' form control -->
+          <input type="text" id="input_id" placeholder="Enter User Name" formControlName="username" />
         </div>
         <br>
         <div class="form-group">
-            <label for="password">Password</label><br><br>
-            <input type="password" id="input_pw" placeholder="Enter Password" />
+          <label for="password">Password</label><br><br>
+          <!-- Bind the input field to the 'password' form control -->
+          <input type="password" id="input_pw" placeholder="Enter Password" formControlName="password" />
         </div>
         <br>
         <div class="form-actions">
-          <button type="submit" class="login-btn">Login</button>
+          <button type="submit" class="login-btn" [disabled]="loginForm.invalid">Login</button>
           <button type="button" class="register-btn" [routerLink]="['/register']">New? Register Here</button>
         </div>
         <br>
