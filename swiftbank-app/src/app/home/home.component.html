@@ -24,7 +24,7 @@
         </div>
       </div>
   
-      <div class="transactions-card">
+      <div class="transactions-card" [routerLink]="['/transactions']" style="cursor: pointer;">
         <p class="transactions-header">Recent Transactions</p>
         <img id="transaction-img" src="assets/recent-transactions.png" alt="Transactions Illustration" />
       </div>
@@ -39,7 +39,7 @@
         </div>
       </div>
   
-      <div class="transfer-funds-card">
+      <div class="transfer-funds-card" [routerLink]="['/transfer']" style="cursor: pointer;">
         <p class="transfer-header">Transfer Funds</p>
         <img id="transfer-img" src="assets/transfer-funds.png" alt="Transfer Illustration" />
       </div>
