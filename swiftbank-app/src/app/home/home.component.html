@@ -1,71 +1,48 @@
 <div class="dashboard-container">
-    <!-- Logo and User Details -->
-    <header class="dashboard-header">
-      <div class="logo">
-        <img src="assets/swift-bank-logo.png" alt="Swift Bank Logo" />
+  <header class="dashboard-header">
+    <div class="logo">
+      <img src="assets/swift-bank-logo.png" alt="Swift Bank Logo" />
+    </div>
+    <div class="user-info">
+      <div class="notifications">
+        <i class="icon-bell"></i>
       </div>
-      <div class="user-info">
-        <div class="notifications">
-          <i class="icon-bell"></i>
-        </div>
-        <div class="user-avatar">
-          <span class="avatar-initials">JD</span>
-        </div>
+      <div class="user-avatar">
+        <span class="avatar-initials">JD</span>
       </div>
-    </header>
+    </div>
+  </header>
 
-    <!-- Account Details Section -->
-    <section class="account-details">
-
-      <div class="acc-details-card">
-        <p class="acc-details-heading">Account Details</p>
-        <div class="account-info">
-          <p id="acc-holder"><strong>John Doe</strong></p>
-          <p id="acc-num">167-3090-210</p>
-          <p id="acc-type">Savings Account</p>
+  <div class="main-dashboard">
+    <section class="top-section">
+      <div class="account-details-card">
+        <p class="account-details-header">Account Details</p>
+        <div class="account-details-content">
+          <p id="account-holder">John Doe</p>
+          <p id="account-number">167-3090-210</p>
+          <p id="account-type">Savings Account</p>
         </div>
       </div>
   
-      <div class="acc-bal-card">
-        <p class="acc-bal-heading">Account Balance</p>
-        <div class="account-balance">
-          <p id="bal-amt"><strong>$25,685</strong></p>
-          <p id="daily-lim">Daily Withdrawal Limit: $2,000</p>
-        </div>
+      <div class="transactions-card">
+        <p class="transactions-header">Recent Transactions</p>
+        <img id="transaction-img" src="assets/recent-transactions.png" alt="Transactions Illustration" />
       </div>
     </section>
-  
-    <!-- Transfer Funds and Recent Transactions Section -->
-    <section class="transfer-transactions">
-      <div class="trf-card">
-        <p class="trf-heading">Transfer Funds</p>
-        <div class="transfer-list">
-          <div class="recv1">Harry Han</div>
-          <div class="recv2">Cheryl Chen</div>
-          <div class="recv3">Matilda Mah</div>
-          <div class="add-recv">Add Recipient</div>
+    
+    <section class="bottom-section">
+      <div class="account-balance-card">
+        <p class="account-balance-header">Account Balance</p>
+        <div class="account-balance-content">
+          <p id="bal-amount">$25,685</p>
+          <p id="withdrawal-limit">Daily Withdrawal Limit: $2,000</p>
         </div>
       </div>
   
-      <div class="trscn-card">
-        <p class="trscn-heading">Recent Transactions</p>
-        <div class="transaction-summary">
-          <p>Past 30 Days: <strong style="color: red;">-$1,543.78</strong></p>
-        </div>
-        <div class="transaction-list">
-          <div class="transaction-item">
-            <p>Harry Han</p>
-            <p>$250.00</p>
-          </div>
-          <div class="transaction-item">
-            <p>Cheryl Chan</p>
-            <p>$50.00</p>
-          </div>
-          <div class="transaction-item">
-            <p>Matilda Mah</p>
-            <p>$10.00</p>
-          </div>
-        </div>
+      <div class="transfer-funds-card">
+        <p class="transfer-header">Transfer Funds</p>
+        <img id="transfer-img" src="assets/transfer-funds.png" alt="Transfer Illustration" />
       </div>
     </section>
   </div>
+</div>
