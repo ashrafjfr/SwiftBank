@@ -13,7 +13,8 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 80px;
-  gap: 1100px;
+  gap:1000px;
+  padding-right: 70px;
 }
 
 .logo img {
@@ -26,9 +27,9 @@
   margin-top: 5px;;
 }
 
-.notifications {
+/* .notifications {
   margin-right: 20px;
-}
+} */
 
 .user-avatar {
   width: 50px;

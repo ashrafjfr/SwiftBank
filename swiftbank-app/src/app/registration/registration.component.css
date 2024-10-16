@@ -22,13 +22,14 @@
   h2 {
     font-size: 32px;
     font-weight: bolder;
-    margin-bottom: 40px;
+    padding-top: 70px;
+    margin-bottom: 20px;
     background: linear-gradient(to right, #C42124 10%, #2175C4 50%);
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
     text-align: left;
     align-self: flex-start; /* Aligns the heading to the start of the container */
-    margin-left: 15%;
+    margin-left: 217px;
   }
 
   #head-title{
@@ -44,6 +45,7 @@
     justify-content: space-between;
     gap: 5px;
     column-gap: 20px;
+    margin-left: 50px
   }
   
   /* Form group for each row of inputs */
@@ -65,7 +67,7 @@
     border: 1px solid #ccc;
     border-radius: 8px;
     outline: none;
-    width: 500px;
+    width: 400px;
     border-radius: 15px;
     border-color: #ebebeb;
   }
@@ -99,7 +101,7 @@
     cursor: pointer;
     text-align: center;
     transition: background-color 0.3s ease;
-    width: 220px;
+    width: 170px;
     border-radius: 8px;
     font-weight: bold;
 

@@ -1,1 +1,37 @@
-<p>transfer works!</p>
+<div class="transfer-container">
+    <header class="page-header">
+        <div class="logo">
+          <img src="assets/swift-bank-logo.png" alt="Swift Bank Logo" />
+        </div>
+        <div class="user-info">
+          <!-- <div class="notifications">
+            <i class="icon-bell"></i>
+          </div> -->
+          <div class="user-avatar">
+            <span class="avatar-initials">JD</span>
+          </div>
+        </div>
+    </header>
+    <div class="transfer-content">
+        <p class="transfer-header">Transfer Funds<p>
+        <form class="transfer-form">
+            <!-- Input for Recipient Account Number -->
+            <div class="form-group">
+              <label for="recipientAccount">Recipient Account Number</label>
+              <input type="text" id="recipientAccount" placeholder="Enter account number" />
+            </div>
+        
+            <!-- Input for Transfer Amount -->
+            <div class="form-group">
+              <label for="transferAmount">Transfer Amount</label>
+              <input type="text" id="transferAmount" placeholder="Enter amount" />
+            </div>
+        
+            <!-- Action buttons (Back and Send) -->
+            <div class="form-actions">
+              <button type="button" class="back-btn" [routerLink]="['/home']">← Back</button>
+              <button type="submit" class="send-btn">Send</button>
+            </div>
+        </form>
+    </div>
+</div>
