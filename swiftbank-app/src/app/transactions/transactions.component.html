@@ -1,1 +1,40 @@
-<p>transactions works!</p>
+<div class="transactions-container">
+    <header class="page-header">
+        <div class="logo">
+          <img src="assets/swift-bank-logo.png" alt="Swift Bank Logo" />
+        </div>
+        <div class="user-info">
+          <!-- <div class="notifications">
+            <i class="icon-bell"></i>
+          </div> -->
+          <div class="user-avatar">
+            <span class="avatar-initials">JD</span>
+          </div>
+        </div>
+    </header>
+    <div class="transactions-content">
+        <div class="transaction-header">
+            <a class="back-btn" [routerLink]="['/home']">← Back</a>
+            <h2>Transaction History</h2>
+          </div>
+        
+          <!-- Table to display transactions -->
+          <table>
+            <thead>
+              <tr>
+                <th>Transactions</th>
+                <th>Amount</th>
+                <th>Date</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Using *ngFor to loop through the transactions array -->
+              <tr *ngFor="let transaction of transactions">
+                <td>{{ transaction.accountNumber }}</td>
+                <td>{{ transaction.amount }} SGD</td>
+                <td>{{ transaction.date | date: 'd MMM' }}</td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+  </div>

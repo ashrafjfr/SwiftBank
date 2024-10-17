@@ -1,0 +1,91 @@
+.transactions-container {
+    display: flex;
+    flex-direction: column;
+    padding: 0 100px;
+    margin-top: 50px;
+    align-items: center;
+    margin-bottom: 100px;
+}
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 80px;
+    gap:1000px;
+    padding-right: 70px;
+  }
+
+  .logo img {
+    width: 150px;
+  }
+  
+  .user-info {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;;
+  }
+  
+  .user-avatar {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 50%;
+    font-size: 15px;
+    color: #fff;
+    text-align: center;
+    background: #a0c5ec;
+    margin-top: 5px;
+  }
+  
+  .avatar-initials {
+    font-weight: bold;
+  }
+
+  .transactions-content {
+    width: 1000px;
+  }
+
+.transaction-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.back-btn {
+  font-size: 16px;
+  color: #9e9e9e;
+  text-decoration: none;
+}
+
+.back-btn:hover {
+  text-decoration: underline;
+}
+
+h2 {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+/* Table styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table th, table td {
+  padding: 15px 20px;
+  text-align: left;
+}
+
+table th {
+  font-size: 16px;
+  font-weight: bold;
+  border-bottom: 2px solid #ddd;
+}
+
+table td {
+  font-size: 16px;
+  border-bottom: 1px solid #f3f3f3;
+}

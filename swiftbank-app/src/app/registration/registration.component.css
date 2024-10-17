@@ -61,6 +61,7 @@
     text-align: left; /* Ensures label is aligned left */
   }
   
+  /* Input and select styles */
   .form-group input {
     padding: 15px;
     font-size: 16px;
@@ -70,15 +71,47 @@
     width: 400px;
     border-radius: 15px;
     border-color: #ebebeb;
+    background-color: #f9f9f9; /* Matches background for input */
+    appearance: none; /* Removes default dropdown styling for consistency */
+  }
+
+  .form-group select {
+    padding: 15px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    width: 435px;
+    border-radius: 15px;
+    border-color: #ebebeb;
+    background-color: #f9f9f9; /* Matches background for input */
+    appearance: none; /* Removes default dropdown styling for consistency */
   }
   
-  .form-group input:focus {
+  .form-group input:focus,
+  .form-group select:focus {
     border-color: #2175C4;
   }
   
+  /* Placeholder color for input */
   .form-group input::placeholder {
     color: #bebebe;
     font-size: 14px;
+  }
+  
+  /* Adding a caret icon for the dropdown */
+  .form-group select {
+    background-image: url('data:image/svg+xml;base64,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6"><path fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1l4 4 4-4"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 12px 12px;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+  
+  .form-group select option {
+    color: #333;
   }
   
 
