@@ -3,52 +3,35 @@ CREATE DATABASE swiftbank;
 USE swiftbank;
 
 -- Users Table--
-CREATE TABLE users (
-    user_id BIGINT NOT NULL AUTO_INCREMENT, 
-    first_name VARCHAR(50) NOT NULL,
-    last_name VARCHAR(50) NOT NULL,
-    username VARCHAR(50) NOT NULL UNIQUE,
-    password VARCHAR(255) NOT NULL,
-    role VARCHAR(20),
-    email VARCHAR(100) NOT NULL UNIQUE,
-    phonenumber VARCHAR(20) NOT NULL UNIQUE,
-    PRIMARY KEY (user_id)
-);
+CREATE TABLE `users` ( `user_id` bigint NOT NULL AUTO_INCREMENT, 
+`first_name` varchar(255) NOT NULL, 
+`last_name` varchar(255) NOT NULL, 
+`username` varchar(255) NOT NULL, 
+`password` varchar(255) NOT NULL, 
+`role` varchar(255) DEFAULT NULL CHECK (`role` in ('USER', 'ADMIN')), 
+`email` varchar(255) NOT NULL, 
+`phone_number` varchar(255) NOT NULL, PRIMARY KEY (`user_id`), 
+UNIQUE KEY `username` (`username`),
+ UNIQUE KEY `email` (`email`), 
+ UNIQUE KEY `UK_6dotkott2kjsp8vw4d0m25fb7` (`email`), 
+ UNIQUE KEY `UK9q63snka3mdh91as4io72espi` (`phone_number`) );
+
 
 -- Accounts Table --
-CREATE TABLE accounts (
-    account_number BIGINT NOT NULL, 
-    user_id BIGINT NOT NULL,
-    account_type VARCHAR(255) NOT NULL,
-    balance DOUBLE NOT NULL,
-    PRIMARY KEY (account_number),
-    CONSTRAINT fk_user_id FOREIGN KEY (user_id) REFERENCES users(user_id)
-);
-
--- Create trigger to generate 10-digit random number
-DELIMITER $$
-
-CREATE TRIGGER before_insert_accounts
-BEFORE INSERT ON accounts
-FOR EACH ROW
-BEGIN
-    IF NEW.account_number IS NULL THEN
-        -- Generate a random 10-digit number between 1000000000 and 9999999999
-        SET NEW.account_number = FLOOR(1000000000 + RAND() * 8999999999);
-    END IF;
-END$$
-
-DELIMITER ;
+CREATE TABLE `accounts` ( `account_number` bigint NOT NULL AUTO_INCREMENT, 
+`user_id` bigint NOT NULL, 
+`account_type` varchar(255) NOT NULL, 
+`balance` double NOT NULL, PRIMARY KEY (`account_number`),
+ UNIQUE KEY `UK_6kplolsdtr3slnvx97xsy2kc8` (`account_number`),
+  KEY `accounts_ibfk_1` (`user_id`), 
+  CONSTRAINT `accounts_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) );
 
 -- Transactions Table --
-CREATE TABLE transactions (
-    transaction_id BIGINT NOT NULL AUTO_INCREMENT, 
-    account_id BIGINT NOT NULL,
-    transaction_type ENUM('DEPOSIT', 'WITHDRAWAL', 'TRANSFER') NOT NULL,
-    transaction_to BIGINT,  -- Account the money is transferred to (if applicable)
-    amount DOUBLE NOT NULL,
-    transaction_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    PRIMARY KEY (transaction_id),
-    CONSTRAINT fk_account_id FOREIGN KEY (account_id) REFERENCES accounts(account_number),
-    CONSTRAINT fk_transaction_to FOREIGN KEY (transaction_to) REFERENCES accounts(account_number)  -- Foreign key for transfers
-);
+CREATE TABLE `transactions` 
+( `transaction_id` bigint NOT NULL AUTO_INCREMENT,
+ `account_id` bigint NOT NULL, `transaction_type` varchar(255) NOT NULL, 
+ `transaction_to` bigint DEFAULT NULL, `amount` double NOT NULL, 
+ `transaction_date` timestamp NULL DEFAULT CURRENT_TIMESTAMP, 
+ PRIMARY KEY (`transaction_id`), 
+ KEY `FK20w7wsg13u9srbq3bd7chfxdh` (`account_id`),
+ CONSTRAINT `FK20w7wsg13u9srbq3bd7chfxdh` FOREIGN KEY (`account_id`) REFERENCES `accounts` (`account_number`) ON DELETE CASCADE );
