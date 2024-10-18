@@ -1,0 +1,61 @@
+PostMan RESTAPI Commands
+Run the below commands in ur postman app to check the codes are working. Do let me know if there's an error :) 
+
+Users
+POST:
+http://localhost:<your_localhostNo>/api/users
+----create user ----
+{
+  "firstName": "John",
+  "lastName": "Doe",
+  "username": "johndoe",
+  "password": "password123",
+  "email": "john.doe@example.com",
+  "phoneNumber": "1234567890",
+  "role": "USER"
+}
+
+Accounts 
+POST:
+http://localhost:<your_localhostNo>/api/accounts
+----Create Savings account----
+{
+  "user": {
+    "userId": <USER_ID>   // replace with the actual userId generated
+  },
+  "accountType": "SAVINGS",
+  "balance": 1000
+}
+
+----Create Checking account----
+{
+  "user": {
+    "userId": <USER_ID>   // replace with the actual userId generated
+  },
+  "accountType": "CHECKING",
+  "balance": 500
+}
+
+
+Transactions
+POST:
+http://localhost:<your_localhostNo>/api/transactions
+----Deposit----
+{
+  "accountId":  <Account_number>,    // The account you're depositing into
+  "transactionType": "DEPOSIT",
+  "amount": 200.0
+}
+----Withdrawal----
+{
+  "accountId": <Account_number>,    // The account you're withdrawing from
+  "transactionType": "WITHDRAWAL",
+  "amount": 50.0
+}
+----Transfer----
+{
+  "accountId": <Account_number,>    // Source account
+  "transactionTo": <Account_number>, // Destination account
+  "transactionType": "TRANSFER",
+  "amount": 150.0
+}
