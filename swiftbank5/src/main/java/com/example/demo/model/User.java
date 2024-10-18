@@ -1,5 +1,7 @@
 package com.example.demo.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import jakarta.persistence.*;
 
 @Entity
@@ -28,16 +30,26 @@ public class User {
 
     @Column(name = "phone_number", nullable = false, unique = true)
     private String phoneNumber;
+    
+ // New field for account type
+    @Enumerated(EnumType.STRING)
+    @Column(name = "account_type", nullable = false)
+    private Account.AccountType accountType;
 
     @Column(name = "role", nullable = true)
     private String role;
 
-    // Getters and Setters
+    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonManagedReference 
+    private Account account;
+    
 
+    // Getters and Setters for User properties
+    
     public Long getUserId() {
         return userId;
     }
-
+    
     public void setUserId(Long userId) {
         this.userId = userId;
     }
@@ -96,5 +108,20 @@ public class User {
 
     public void setRole(String role) {
         this.role = role;
+    }
+
+    public Account getAccount() {
+        return account;
+    }
+
+    public void setAccount(Account account) {
+        this.account = account;
+    }
+    public Account.AccountType getAccountType() {
+        return accountType;
+    }
+
+    public void setAccountType(Account.AccountType accountType) {
+        this.accountType = accountType;
     }
 }
