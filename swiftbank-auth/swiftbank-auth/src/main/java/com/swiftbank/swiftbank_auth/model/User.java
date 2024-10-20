@@ -5,30 +5,32 @@ import jakarta.persistence.*;
 @Entity
 @Table(name = "users")
 public class User {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long userId;
 
-    @Column(nullable = false, length = 50)
+    @Column(nullable = false, length = 255)
     private String firstName;
 
-    @Column(nullable = false, length = 50)
+    @Column(nullable = false, length = 255)
     private String lastName;
 
-    @Column(nullable = false, unique = true, length = 50)
+    @Column(nullable = false, unique = true, length = 255)
     private String username;
 
     @Column(nullable = false, length = 255)
     private String password;
 
-    @Column(length = 20)
+    @Column(length = 255)
     private String role;
 
-    @Column(nullable = false, unique = true, length = 100)
+    @Column(nullable = false, unique = true, length = 255)
     private String email;
 
-    @Column(nullable = false, unique = true, length = 20)
+    @Column(nullable = false, length = 255)
+    private String accountType;
+
+    @Column(nullable = false, unique = true, length = 255)
     private String phoneNumber;
 
     public Long getUserId() {
@@ -87,6 +89,14 @@ public class User {
         this.email = email;
     }
 
+    public String getAccountType() {
+        return accountType;
+    }
+
+    public void setAccountType(String accountType) {
+        this.accountType = accountType;
+    }
+
     public String getPhoneNumber() {
         return phoneNumber;
     }
@@ -94,5 +104,4 @@ public class User {
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
-    
 }
